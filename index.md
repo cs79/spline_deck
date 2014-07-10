@@ -17,16 +17,7 @@ A good question.  It is a piecewise (usually polynomial) function used to fit a 
 
 Here's what a spline looks like:
 
-```{r, echo=FALSE}
-## spline code from lecture goes here
-n <- 500; x <- seq(0, 4 * pi, length = n); y <- sin(x) + rnorm(n, sd = .3)
-knots <- seq(0, 8 * pi, length = 20);
-splineTerms <- sapply(knots, function(knot) (x > knot) * (x - knot)^2)
-xMat <- cbind(1, x, x^2, splineTerms)
-yhat <- predict(lm(y ~ xMat - 1))
-plot(x, y, frame = FALSE, pch = 21, bg = "lightblue", cex = 1.5)
-lines(x, yhat, col = "red", lwd = 2)
-```
+![plot of chunk unnamed-chunk-1](assets/fig/unnamed-chunk-1.png) 
 
 --- .class #id 
 
