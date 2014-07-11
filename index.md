@@ -6,7 +6,7 @@ job         :
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
-widgets     : []            # {mathjax, quiz, bootstrap}
+widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
@@ -15,7 +15,13 @@ knit        : slidify::knit2slides
 
 A good question.  It is a piecewise (usually polynomial) function used to fit a continuous function through complex data, instead of using a single high-order polynomial function.
 
-Here's what a spline looks like:
+A spline is fit between sets of points called "knots", with a line or low-order polynomial being fit through each incremental pair of knot points.
+
+---
+
+## An example spline
+
+Here's what it looks like:
 
 ![plot of chunk unnamed-chunk-1](assets/fig/unnamed-chunk-1.png) 
 
@@ -23,14 +29,14 @@ Here's what a spline looks like:
 
 ## The Experiment
 
-What are our variables?
-- Time slice length t
-- Number of knot points n
+### What are our variables?
+- Time slice length $t$
+- Number of knot points $n$
 
-What is our outcome?
+### What is our outcome?
 - A prediction model trained on historical (or simulated) data for a specific combination of time slice length and number of knots
 
-What is our objective?
+### What is our objective?
 - To obtain optimal tradeoff between accuracy of predictive model (accuracy in terms of predicting the coords of the nth knot point in the next time slice), and computation time requirements
 
 ---
@@ -40,5 +46,3 @@ What is our objective?
 This could potentially have application in something like HFT, where a decently accurate prediction of a small incremental move in a security price, executed many times, could (possibly significantly) beat larger batch trades made on much more widely-spaced increments...
 
 ...or it could yield absolutely nothing of practical use, hence experimentation to see if it might!
-
----
