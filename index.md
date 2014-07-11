@@ -43,6 +43,6 @@ Here's what it looks like:
 
 ## Why would we ever want to do this?
 
-This could potentially have application in something like HFT, where a decently accurate prediction of a small incremental move in a security price, executed many times, could (possibly significantly) beat larger batch trades made on much more widely-spaced increments...
+This could potentially have application in something like HFT, where a decently accurate prediction of a small incremental move in a security price, executed many times, could (possibly significantly) beat larger batch trades made on much more widely-spaced increments.
 
-...or it could yield absolutely nothing of practical use, hence experimentation to see if it might!
+Alternatively, it could yield absolutely nothing of practical use, hence experimentation to see if it might!
